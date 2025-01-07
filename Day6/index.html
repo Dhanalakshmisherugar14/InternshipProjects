@@ -3,111 +3,208 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>contact2</title>
-    <link rel="stylesheet" href="inbex.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <title>Contact Manager</title>
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
     />
-    <script defer src="index.js"></script>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="row">
-      <div class="col-3 bg-light sidebar p-3">
-          <div class="d-flex align-items-center mb-3">
-              <div class="hamburger-menu">
-                  <span></span>
-                  <span></span>
-                  <span></span>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3 col-lg-2 bg-white sidebar py-3">
+          <div class="d-flex align-items-center mb-4">
+            <div class="hamburger-menu me-3">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h5 class="mb-0">Contacts</h5>
+          </div>
+
+          <button class="btn btn-primary w-100 mb-4" id="create-contact">
+            <i class="fas fa-plus me-2"></i>Create contact
+          </button>
+
+          <div class="sidebar-sections">
+            <ul class="list-unstyled mb-4">
+              <li
+                class="sidebar-item d-flex justify-content-between align-items-center p-2"
+              >
+                <span><i class="fas fa-user me-2"></i>Contacts</span>
+                <span class="badge bg-secondary">0</span>
+              </li>
+              <li class="sidebar-item p-2">
+                <i class="fas fa-star me-2"></i>Frequent
+              </li>
+              <li class="sidebar-item p-2">
+                <i class="fas fa-users me-2"></i>Other contacts
+              </li>
+            </ul>
+
+            <hr />
+
+            <h6 class="text-muted mb-3">Fix & manage</h6>
+            <ul class="list-unstyled">
+              <li class="sidebar-item p-2">
+                <i class="fas fa-tools me-2"></i>Merge & fix
+              </li>
+              <li class="sidebar-item p-2">
+                <i class="fas fa-file-import me-2"></i>Import
+              </li>
+              <li class="sidebar-item p-2">
+                <i class="fas fa-trash me-2"></i>Trash
+              </li>
+            </ul>
+
+            <hr />
+
+            <button class="btn btn-link text-decoration-none p-2">
+              <i class="fas fa-tag me-2"></i>Labels
+            </button>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-9 col-lg-10 bg-light">
+          <!-- Contact List View -->
+          <div class="main-container" id="contact-list">
+            <div class="search-bar">
+              <div class="input-group w-50">
+                <span class="input-group-text bg-white">
+                  <i class="fas fa-search"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control border-start-0"
+                  placeholder="Search contacts"
+                />
               </div>
-  
-              <i class="bi bi-person-circle fs-3 me-2"></i>
-  
-              <img src="contact.jpg" alt="" />
-  
-              <h5 class="mb-0">Contacts</h5>
-          </div>
-          <a href="#">
-              <button class="btn btn-primary w-100 mb-3">+ Create contact</button>
-          </a>
-  
-          <ul class="list-unstyled">
-              <li class="d-flex justify-content-between align-items-center py-2">
-                  <span> Contacts</span>
-                  <span class="badge bg-secondary">0</span>
-              </li>
-              <li class="py-2">Frequent</li>
-              <li class="d-flex justify-content-between align-items-center py-2">
-                  <span> Other contacts</span>
-              </li>
-          </ul>
-          <hr />
-          <ul></ul>
-          <ul class="list-unstyled">
-              <li class=""><span>Fix & manage</span></li>
-          </ul>
-          <ul class="list-unstyled">
-              <li class="d-flex justify-content-between align-items-center py-2">
-                  <span> Merge & fix</span>
-              </li>
-              <li class="py-2">Import</li>
-              <li class="py-2">Trash</li>
-          </ul>
-          <hr />
-          <button class="btn btn-link text-decoration-none p-0">+ Labels</button>
-      </div>
-  
-    
-    
+            </div>
 
-    <!--- main side-->
-    <div class="col-9">
-      <div class="main-container p-3">
-          <div class="search-bar">
-            <input type="text" class="form-control w-50" placeholder="Search"><br>
-          </div>
-          <div class="table-responsive">
-            <table class="table align-middle">
+            <div class="table-responsive bg-white rounded shadow-sm">
+              <table class="table table-hover mb-0">
                 <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone number</th>
-                        <th>company</th>
-                    </tr>
+                  <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th>Phone number</th>
+                    <th>Company </th>
+                    <th>Actions</th>
+                  </tr>
                 </thead>
-                <tbody id="contactsList">
-                    
+                <tbody id="contact-table">
+                  <!-- done through js  -->
                 </tbody>
-            </table>
-        
+              </table>
+            </div>
+
+            <div id="noContactsMessage" class="text-center py-5">
+              <i
+                class="fas fa-address-book text-muted mb-3"
+                style="font-size: 3rem"
+              ></i>
+              <h5 class="text-muted">No contacts found</h5>
+              <p class="text-muted">Get started by creating a new contact</p>
+            </div>
           </div>
-        <div id="noContactsMessage" class="text-center py-5 d-none">
-          <i class="fas fa-users text-muted mb-3" style="font-size: 3rem;"></i>
-          <h5 class="text-muted">No contacts found</h5>
-      </div>
+
+          <!-- Contact Form -->
+          <div class="main-container bg-white rounded shadow-sm" id="form">
+            <div class="d-flex align-items-center mb-4 position-relative">
+              <button
+                class="btn-close position-absolute top-0 start-0"
+                id="closeButton"
+              ></button>
+              <div class="profile-pic mx-auto">
+                <img
+                  src="contact.jpg"
+                  alt="Profile"
+                  class="rounded-circle shadow-sm"
+                />
+                <button class="btn btn-link position-absolute bottom-0 end-0">
+                  <i class="fas fa-camera"></i>
+                </button>
+              </div>
+            </div>
+
+            <form id="contactForm" class="needs-validation">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="First name"
+                      required
+                    />
+                    <label for="firstName">First name</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Surname"
+                      required
+                    />
+                    <label for="surname">Surname</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Company"
+                />
+                <label for="company">Company</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email"
+                  required
+                />
+                <label for="email">Email</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  placeholder="Phone"
+                />
+                <label for="phone">Phone</label>
+              </div>
+
+              <div class="d-flex justify-content-end gap-2">
+                <button type="button" class="btn btn-light" id="cancelButton">
+                  Cancel
+                </button>
+                <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+            </form>
           </div>
-        
-    </div>
-</div>
+        </div>
       </div>
-  
     </div>
 
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+    <script defer src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

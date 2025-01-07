@@ -1,0 +1,52 @@
+.sidebar {
+    min-height: 100vh;
+    border-right: 1px solid #dee2e6;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    width: 20px;
+    height: 2px;
+    background-color: #212529;
+    display: block;
+}
+
+.profile-pic img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.sidebar-item {
+    transition: background-color 0.2s;
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+
+.sidebar-item:hover {
+    background-color: #f8f9fa;
+}
+
+#form {
+    display: none;
+}
+
+.main-container {
+    padding: 2rem;
+}
+
+.search-bar {
+    margin-bottom: 2rem;
+}
+
+.table th {
+    font-weight: 500;
+    color: #6c757d;
+}
