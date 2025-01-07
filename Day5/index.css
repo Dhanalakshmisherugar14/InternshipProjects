@@ -1,0 +1,112 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+
+.sidebar {
+  border-right: 1px solid #ddd;
+  background-color: #ffffff;
+}
+
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px; 
+  height: 20px; 
+  cursor: pointer; 
+}
+
+.hamburger-menu span {
+  display: block;
+  height: 3px; 
+  background-color: #333;
+  border-radius: 3px; 
+  transition: 0.3s; 
+}
+
+.sidebar h5 {
+  font-weight: bold;
+}
+
+.sidebar ul {
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+}
+
+.sidebar ul li:hover {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.badge {
+  font-size: 0.9em;
+}
+
+
+.input-group input {
+  border-radius: 4px 0 0 4px;
+  box-shadow: none;
+}
+
+.input-group button {
+  border-radius: 0 4px 4px 0;
+  box-shadow: none;
+}
+
+.table {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.table thead th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+.table tbody tr {
+  transition: background-color 0.3s;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.table td,
+.table th {
+  padding: 12px;
+  vertical-align: middle;
+}
+
+/* Search Bar Styling */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  padding: 10px;
+}
+
+.input-group button {
+  padding: 10px 15px;
+}
+
+/* General Container Styling */
+.container-fluid {
+  padding: 0;
+}

@@ -1,0 +1,314 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding: 0;
+}
+
+.header {
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+  object-fit: cover;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(images/graduvation.jpg);
+  background-position: 50% 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+  height: 400px;
+  object-fit: cover;
+  width: 100%;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ed0202;
+  text-decoration: none;
+}
+
+.navbar-brand svg {
+  margin-right: 0.5rem;
+  width: 48px;
+  height: 48px;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 1rem;
+}
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  color: hsl(0, 0%, 100%) !important;
+  margin-right: 15px;
+  position: relative; 
+  text-decoration: none; 
+}
+
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -3px; 
+  left: 0;
+  width: 0;
+  height: 2px; 
+  background-color: orange; 
+  transition: width 0.3s ease; 
+}
+
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%; 
+}
+
+.navbar-nav .nav-link {
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  color: hsl(0, 0%, 100%) !important;
+  margin-right: 15px;
+}
+.navbar-nav .nav-link:hover {
+  color: #ed0202;
+}
+
+.hero-section {
+  background-size: cover;
+
+  height: 50vh;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-position: top center;
+
+  background-position: 50% 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+}
+
+.hero-section .btn:hover {
+  background-color: white;
+  color: black;
+}
+
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+.card-card {
+  text-align: center;
+  margin-top: 40px;
+}
+.card-card h1 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.card-card p {
+  color: #6c757d;
+  font-size: 1rem;
+}
+.card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff3f3;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  max-width: 360px;
+  flex: 1;
+  text-align: center;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.card-title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 19.2px;
+}
+.card-body {
+  background-color: #fff3f3;
+  border-radius: 1rem;
+  padding: 0px;
+  height: 50vh;
+}
+.card-text {
+  color: #777777;
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  letter-spacing: 0.1rem;
+}
+.campus-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.campus-card img {
+  width: 100%;
+  height: 88.5vh;
+  object-fit: cover;
+}
+.campus-card h5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  z-index: 2;
+}
+.overlay:hover .overlay {
+  bottom: 0;
+}
+.overlay {
+  position: absolute;
+  bottom: -100%; /* Start hidden at the bottom */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 152, 219, 0.8); /* Semi-transparent blue */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: bottom 0.3s ease; /* Smooth transition */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.my-5 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+.game {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  text-align: left;
+  align-items: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-img-top {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.game-body {
+  padding: 20px;
+  text-align: left;
+}
+
+.game-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.game-text {
+  font-size: 1rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.row-cols-1 .col,
+.row-cols-md-3 .col-md-4 {
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 70vh;
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+.footer1 {
+  font-size: 1.8rem;
+}
+.text-muted {
+  font-size: 1rem;
+}
+.footer a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  color: #0056b3;
+}
+.mb-3 {
+  font-size: 0.6rem;
+}

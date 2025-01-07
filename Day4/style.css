@@ -1,0 +1,395 @@
+body {
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: transparent;
+  background-size: cover;
+  background: center;
+  background-repeat: no-repeat;
+  background: rgba(0, 0, 0, 0.5);
+}
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff !important;
+}
+.navbar-nav {
+  cursor: pointer;
+}
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  color: hsl(0, 0%, 100%) !important;
+  margin-right: 15px;
+  position: relative; /* Required for positioning the underline */
+  text-decoration: none; /* Removes the default underline */
+}
+
+/* Add the underline effect on hover */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -3px; /* Adjusts the underline position */
+  left: 0;
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  background-color: rgb(233, 85, 31); /* Color of the underline */
+  transition: width 0.3s ease; /* Smooth transition effect */
+}
+
+/* On hover, expand the underline */
+.navbar-nav .nav-link:hover::after {
+  width: 100%; /* Expands the underline across the full width of the link */
+}
+
+.navbar-brand img {
+  width: fit-content;
+  mix-blend-mode: multiply;
+}
+.cap-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.navbar-toggler-icon {
+  background-color: #ffffff;
+  border-radius: 7px;
+  border-color: #ffffff;
+}
+
+.hero-section {
+  position: relative;
+  background-color: transparent;
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero-section h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+}
+.hero-section p {
+  max-width: 600px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  margin: 0px 0px 45px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 13.5px;
+  line-height: 1.6;
+  letter-spacing: 0.1rem;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-section .container {
+  z-index: 2;
+  color: rgb(255, 255, 255);
+}
+
+.hero-section h1 {
+  font-size: 3.7rem;
+  font-weight: bold;
+}
+
+.hero-section .btn {
+  font-size: 1.25rem;
+  border: 2px solid white;
+  padding: 0.75rem 1.5rem;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-section .btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.header {
+  background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)),
+    url(images/campus.jpg);
+  background-size: cover;
+  background-position: center;
+  font-size: 1rem;
+  color: white;
+  object-fit: cover;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+.card-card {
+  text-align: center;
+  margin-top: 40px;
+}
+.card-card h1 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.card-card p {
+  color: #6c757d;
+  font-size: 1rem;
+}
+.card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff3f3;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  max-width: 360px;
+  flex: 1;
+  text-align: center;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.card-title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 19.2px;
+}
+.card-body {
+  background-color: #fff3f3;
+  border-radius: 1rem;
+  padding: 0px;
+  height: 50vh;
+}
+.card-text {
+  color: #777777;
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  letter-spacing: 0.1rem;
+}
+.campus-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.campus-card img {
+  width: 100%;
+  height: 88.5vh;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: -100%; 
+  width: 100%;
+  height: 100%;
+  background: rgba(209, 79, 9, 0.3); 
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  transition: bottom 0.5s ease; 
+}
+
+.campus-card:hover .overlay {
+  bottom: 0; 
+}
+
+.campus-card h5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 3.25rem;
+  z-index: 2;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.my-5 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+.game {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  text-align: left;
+  align-items: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-img-top {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.game-body {
+  padding: 20px;
+  text-align: left;
+}
+
+.game-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.game-text {
+  font-size: 1rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.row-cols-1 .col,
+.row-cols-md-3 .col-md-4 {
+  display: flex;
+  justify-content: center;
+}
+
+.blogs-section {
+  width: auto;
+
+  background-color: #f9f9f9;
+}
+
+.blogs-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.blogs-description {
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+.blog-card {
+  background-color: #ffdcdc;
+  height: auto;
+  min-height: 220px;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(211, 167, 167, 0.1);
+}
+
+.blog-card img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.blog-content h5 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.blog-content p {
+  text-align: left;
+  color: #555;
+}
+.contact-info {
+  text-align: center;
+  padding: 12rem 3rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(images/discussion.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.heading-2 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.btn-outline-light {
+  border-color: #fff;
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-outline-light:hover {
+  background-color: #fff;
+  color: #000;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 70vh;
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+.footer1 {
+  font-size: 1.8rem;
+}
+.text-muted {
+  font-size: 1rem;
+}
+.footer a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  color: #0056b3;
+}
