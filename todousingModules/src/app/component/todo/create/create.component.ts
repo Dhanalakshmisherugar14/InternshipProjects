@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Note } from '../../../../models/note';
-import { NoteService } from '../../services/note.service';
+import { Note } from '../models/note';
+import { NoteService } from '../services/note.service';
 import { Router } from '@angular/router'
 
 @Component({
@@ -18,7 +18,6 @@ export class CreateComponent {
     title: '',
     description: '',
     date: '', // Initially empty
-   
   };
 
   constructor(private NoteService: NoteService, private router: Router) {}
@@ -39,7 +38,7 @@ export class CreateComponent {
       title: '',
       description: '',
       date: '', // Reset date picker
-      
+
     };
   }
 
