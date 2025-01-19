@@ -1,1 +1,50 @@
 <p>create works!</p>
+<div>
+    <h5><i class="fa fa-sticky-note"></i>Create new note</h5>
+    <div *ngIf="alert" class="alert alert-primary mt-0" role="alert">
+      Note created successfully!
+    </div>
+    <form (ngSubmit)="createNew()" class="mb-3 createForm">
+      <label for="Title">Title:</label>
+      <input
+        type="text"
+        id="title"
+        class="input-group mb-3"
+        [(ngModel)]="newNote.title"
+        name="title"
+        required
+      />
+      <label for="Description">Description:</label>
+      <textarea
+        id="Description"
+        class="input-group mb-3"
+        [(ngModel)]="newNote.description"
+        name="description"
+        required
+      ></textarea>
+  
+     <div class="date">
+        <label for="date">Date:</label>
+        <input
+          type="date"
+          id="date"
+          [(ngModel)]="newNote.date"
+          name="date"
+          required
+        />
+      </div><br><br>
+      <!---<label for="Color">Color:</label>
+      <input
+        type="text"
+        id="Color"
+        class="input-group mb-3"
+        [(ngModel)]="newNote.color"
+        name="Color"
+        required
+      />-->
+      <button type="submit">Create</button>
+      <button (click)="goBack()">Back</button>
+    </form>
+    
+  </div>
+  

@@ -7,4 +7,5 @@ export const routes: Routes = [
   { path: '', component: HomeComponent }, // Home route
   { path: 'todo', component: TodoComponent }, // Todo route should be '/todo'
   { path: 'contact', component: ContactComponent }, // Contact route
+  
 ];

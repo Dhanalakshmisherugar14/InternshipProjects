@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-todo',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./todo.component.css']  // Corrected styleUrls
 })
 export class TodoComponent {
-  // Component logic
+  title='todo-list';
 }
