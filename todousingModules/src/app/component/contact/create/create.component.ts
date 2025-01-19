@@ -17,22 +17,24 @@ templateUrl: './create.component.html',
 })
 export class CreateComponent {
   alert: { show: boolean } = { show: false };
- 
+
     newContact: Contact = {
       id: 0,
       name: '',
       email: '',
       date: '',
+      number: '',
     };
   constructor(private ContactService: ContactService, private router: Router) {}
- 
+
 createNew(): void {
+  this.newContact.date = new Date().toDateString();
   this.ContactService.create(this.newContact);
 
-  this.alert.show = true; // Ensure alert is displayed
+  this.alert.show = true; 
 
   setTimeout(() => {
-    this.alert.show = false; // Hide the alert
+    this.alert.show = false;
     this.goBack(); // Navigate back
   }, 3000); // Adjust the timeout duration (e.g., 3000ms for 3 seconds)
 
@@ -43,6 +45,7 @@ createNew(): void {
     name: '',
     email: '',
     date: '',
+    number: '',
 
   };
 }
@@ -50,5 +53,5 @@ createNew(): void {
 goBack(): void {
   this.router.navigate(['/contact']);
 }
- 
+
 }

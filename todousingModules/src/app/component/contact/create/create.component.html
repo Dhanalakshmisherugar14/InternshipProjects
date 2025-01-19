@@ -1,55 +1,95 @@
-<div class="p-4 flex flex-col">
-    <h1 class="flex gap-2">
-      <i class="fa fa-envelope"></i> Create New Contact
-    </h1>
-    <div *ngIf="alert" class="alert alert-primary mt-0" role="alert">
-      Contact created successfully!
-    </div>
-    <form (ngSubmit)="createNew()" class="mb-3 createForm">
-      <!-- Name Field -->
-      <label for="name">Name:</label>
+<div class="p-4 flex flex-col max-w-md mx-auto">
+  <h1 class="flex gap-2 text-2xl font-bold mb-4">
+    <i class="fas fa-envelope"></i> Create New Contact
+  </h1>
+  <div *ngIf="alert.show" class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 mb-4" role="alert">
+    Contact created successfully!
+  </div>
+  <form (ngSubmit)="createNew()" #contactForm="ngForm" class="mb-3 space-y-4">
+    <!-- Name Field -->
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700">Name:</label>
       <input
         type="text"
         id="name"
-        class="input-group mb-3 border-2"
+        class="px-3 py-1 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
         [(ngModel)]="newContact.name"
         name="name"
         required
+        #name="ngModel"
       />
-  
-      <!-- Email Field -->
-      <label for="email">Email:</label>
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-red-500 text-sm mt-1">
+        Name is required.
+      </div>
+    </div>
+
+    <!-- Email Field -->
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
       <input
         type="email"
         id="email"
-        class="input-group mb-3 border-2"
+        class=" px-3 py-1 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
         [(ngModel)]="newContact.email"
         name="email"
         required
+        email
+        #email="ngModel"
       />
-  
-      <!-- Number Field -->
-      <label for="number">Phone Number:</label>
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-red-500 text-sm mt-1">
+        <div *ngIf="email.errors?.['required']">Email is required.</div>
+        <div *ngIf="email.errors?.['email']">Please enter a valid email address.</div>
+      </div>
+    </div>
+
+    <!-- Phone Number Field -->
+    <div>
+      <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number:</label>
       <input
         type="text"
-        id="number"
-        class="input-group mb-3 border-2"
-        [(ngModel)]="newContact.id"
+        id="phone"
+        class="px-3 py-1 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+        [(ngModel)]="newContact.number"
         name="phone"
-        pattern="^[0-9]{10}$"
         required
+        pattern="^[0-9]{10}$"
+        #phone="ngModel"
       />
-      <small class="text-muted mb-2">
+      <small class="text-gray-500 mt-1 block">
         Enter a valid 10-digit phone number.
       </small>
-  
-      <!-- Submit and Back Buttons -->
-      <div class="flex gap-4 mt-4">
-        <button type="submit" class="border p-2 bg-purp text-white">Create</button>
-        <button type="button" (click)="goBack()" class="border p-2 bg-gray-300 text-black">
-          Back
-        </button>
+      <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="text-red-500 text-sm mt-1">
+        <div *ngIf="phone.errors?.['required']">Phone number is required.</div>
+        <div *ngIf="phone.errors?.['pattern']">Please enter a valid 10-digit phone number.</div>
       </div>
-    </form>
-  </div>
-  
+    </div>
+
+        <!-- Date Picker Field -->
+        <div>
+          <label for="date" class="block text-sm font-medium text-gray-700">Created at:</label>
+          <input
+            type="date"
+            id="date"
+            class="px-3 py-1 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            [(ngModel)]="newContact.date"
+            name="date"
+            required
+            #date="ngModel"
+          />
+          <div *ngIf="date.invalid && (date.dirty || date.touched)" class="text-red-500 text-sm mt-1">
+            <div *ngIf="date.errors?.['required']">Date is required.</div>
+          </div>
+        </div>
+
+    <!-- Submit and Back Buttons -->
+    <div class="flex gap-4 mt-4">
+      <button type="submit" [disabled]="!contactForm.form.valid" class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed">
+        Create
+      </button>
+      <button type="button" (click)="goBack()" class="px-4 py-2 bg-gray-300 text-black rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50">
+        Back
+      </button>
+    </div>
+  </form>
+</div>
+

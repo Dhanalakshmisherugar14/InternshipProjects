@@ -13,26 +13,26 @@ import { ContactService } from '../services/contact.service';
   styleUrl: './main.component.css'
 })
 export class MainComponent {
-  
-    contacts: Contact[] = []; // List of all contacts
-    contactToDelete: number | null = null; // ID of the contact to delete
-  
+
+    contacts: Contact[] = [];
+    contactToDelete: number | null = null; 
+
     constructor(
       private contactService: ContactService,
       private activatedRoute: ActivatedRoute,
       private router: Router
     ) {}
-  
+
     ngOnInit(): void {
       // Fetch all contacts when the component initializes
       this.contacts = this.contactService.getAll();
     }
-  
+
     // Select a contact for deletion
     selectContactToDelete(contactId: number): void {
       this.contactToDelete = contactId;
     }
-  
+
     // Delete the selected contact
     deleteContact(): void {
       if (this.contactToDelete !== null) {
