@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { routes } from './app.routes'; // Import the routes
 import { AppComponent } from './app.component';
-import { TodoComponent } from './component/todo/todo.component';
+import { routes } from './app.routes'; // Import the routes
 import { ContactComponent } from './component/contact/contact.component';
 import { HomeComponent } from './component/home/home.component';
+import { TodoComponent } from './component/todo/todo.component';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { HomeComponent } from './component/home/home.component';
     AppComponent,
     TodoComponent,
     ContactComponent,
-    HomeComponent
-    
+    HomeComponent,
   ],
-  providers: [],})
+  providers: [],
+})
 export class AppModule {}

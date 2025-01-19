@@ -1,1 +1,55 @@
-<p>create works!</p>
+<div class="p-4 flex flex-col">
+    <h1 class="flex gap-2">
+      <i class="fa fa-envelope"></i> Create New Contact
+    </h1>
+    <div *ngIf="alert" class="alert alert-primary mt-0" role="alert">
+      Contact created successfully!
+    </div>
+    <form (ngSubmit)="createNew()" class="mb-3 createForm">
+      <!-- Name Field -->
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        class="input-group mb-3 border-2"
+        [(ngModel)]="newContact.name"
+        name="name"
+        required
+      />
+  
+      <!-- Email Field -->
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        class="input-group mb-3 border-2"
+        [(ngModel)]="newContact.email"
+        name="email"
+        required
+      />
+  
+      <!-- Number Field -->
+      <label for="number">Phone Number:</label>
+      <input
+        type="text"
+        id="number"
+        class="input-group mb-3 border-2"
+        [(ngModel)]="newContact.id"
+        name="phone"
+        pattern="^[0-9]{10}$"
+        required
+      />
+      <small class="text-muted mb-2">
+        Enter a valid 10-digit phone number.
+      </small>
+  
+      <!-- Submit and Back Buttons -->
+      <div class="flex gap-4 mt-4">
+        <button type="submit" class="border p-2 bg-purp text-white">Create</button>
+        <button type="button" (click)="goBack()" class="border p-2 bg-gray-300 text-black">
+          Back
+        </button>
+      </div>
+    </form>
+  </div>
+  
