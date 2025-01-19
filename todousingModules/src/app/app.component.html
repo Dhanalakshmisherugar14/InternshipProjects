@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div class="sidebar">
+    <div class="logo">My TODO APP</div>
+    <nav class="nav flex-column">
+      <a class="nav-link active" routerLink="/" routerLinkActive="active">Home</a>
+      <a class="nav-link" routerLink="/todo" routerLinkActive="active">Todo</a>  <!-- Corrected link to /todo -->
+      <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+    </nav>
+  </div>
+  <div class="main-content">
+    <div class="navbar-custom">
+      <div class="search-bar">
+        <input type="text" placeholder="Search" style="width: 1000px;">
+      </div>
+      <div class="profile">
+        <i class="fas fa-bell yellow-bell"></i>
+        <span><i class="fas fa-user"></i> Hello, Keerthi</span>
+      </div>
+    </div>
+    <router-outlet/>
+  </div>
+</div>
