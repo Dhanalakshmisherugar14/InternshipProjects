@@ -72,8 +72,8 @@ function addEventListeners() {
 // Reset form
 function resetForm() {
   contactForm.reset();
-  contactForm.classList.remove("was-validated");
   editingContactIndex = null;
+  clearErrors();
 }
 
 function editContact(index) {
@@ -95,19 +95,50 @@ function editContact(index) {
 
 function deleteContact(index) {
   const contact = contactData[index];
-  localStorage.removeItem(contact.firstName);
-  contactData.splice(index, 1);
-  fillTable();
+  const isConfirmed = confirm("Are you sure you want to delete this contact");
+
+  if (isConfirmed) {
+    localStorage.removeItem(contact.firstName);
+    contactData.splice(index, 1);
+    fillTable();
+    alert(
+      `Contact "${contact.firstName} ${contact.surname}" has been deleted.`
+    );
+  }
+}
+
+function validateName(name) {
+  // Ensure the name contains only letters (uppercase/lowercase) and spaces
+  const nameRegex = /^[A-Za-z\s]+$/;
+  return nameRegex.test(name);
 }
 
 function validatePhoneNumber(phone) {
-  const phoneRegex = /^[0-9]\d{9}$/;
+  const phoneRegex = /^[0-9]{10}$/;
   return phoneRegex.test(phone);
 }
 
 function validateEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
+}
+
+function clearErrors() {
+  // Clear previous error messages and styles
+  const errorMessages = document.querySelectorAll(".error-message");
+  errorMessages.forEach((message) => message.remove());
+
+  const invalidFields = document.querySelectorAll(".invalid");
+  invalidFields.forEach((field) => field.classList.remove("invalid"));
+}
+
+function showError(inputField, message) {
+  const errorMessage = document.createElement("div");
+  errorMessage.classList.add("error-message");
+  errorMessage.textContent = message;
+
+  inputField.classList.add("invalid");
+  inputField.parentNode.appendChild(errorMessage);
 }
 
 contactForm.addEventListener("submit", function (event) {
@@ -121,13 +152,49 @@ contactForm.addEventListener("submit", function (event) {
     phone: contactForm.querySelector('input[placeholder="Phone"]').value,
   };
 
-  if (
-    !formElements.firstName ||
-    !formElements.surname ||
-    !validateEmail(formElements.email) ||
-    !validatePhoneNumber(formElements.phone)
-  ) {
-    alert("Please fill out all fields correctly.");
+  // Clear previous errors before validation
+  clearErrors();
+
+  let isValid = true;
+
+  // Validate First Name
+  if (!formElements.firstName || !validateName(formElements.firstName)) {
+    showError(
+      contactForm.querySelector('input[placeholder="First name"]'),
+      "Please enter a valid first name (only letters and spaces)."
+    );
+    isValid = false;
+  }
+
+  // Validate Surname
+  if (!formElements.surname || !validateName(formElements.surname)) {
+    showError(
+      contactForm.querySelector('input[placeholder="Surname"]'),
+      "Please enter a valid surname (only letters and spaces)."
+    );
+    isValid = false;
+  }
+
+  // Validate Email
+  if (!validateEmail(formElements.email)) {
+    showError(
+      contactForm.querySelector('input[placeholder="Email"]'),
+      "Please enter a valid email address."
+    );
+    isValid = false;
+  }
+
+  // Validate Phone
+  if (!validatePhoneNumber(formElements.phone)) {
+    showError(
+      contactForm.querySelector('input[placeholder="Phone"]'),
+      "Please enter a valid phone number (10 digits)."
+    );
+    isValid = false;
+  }
+
+  // If form is not valid, stop submission
+  if (!isValid) {
     return;
   }
 
@@ -148,18 +215,6 @@ contactForm.addEventListener("submit", function (event) {
   formContainer.classList.remove("d-block");
   contact_list.classList.remove("d-none");
 });
-function deleteContact(index) {
-  const contact = contactData[index];
-  const isConfirmed = confirm("Are you sure you want to delete this contact");
-
-  if (isConfirmed) {
-    localStorage.removeItem(contact.firstName);
-    contactData.splice(index, 1);
-    fillTable();
-    alert(`Contact "${contact.firstName} ${contact.surname}" has been deleted.`);
-  }
-}
-
 
 getData();
 fillTable();

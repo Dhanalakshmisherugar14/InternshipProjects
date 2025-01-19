@@ -1,0 +1,13 @@
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    border-radius: 8px;
+  }
+  
+  button {
+    border-radius: 5px;
+  }
+  

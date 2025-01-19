@@ -1,0 +1,36 @@
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+ align-items: flex-end;
+  padding-right: 10px;
+
+  text-align: right; 
+}
+button[routerLink="create"] {
+  background-color:#8981d7;
+  color: white;
+
+  border-radius: 4px;
+
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.custom-card {
+  border: 2px solid #e9e2e2; /* New border color */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Ensures content stays within the card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.custom-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 20px rgba(217, 41, 197, 0.2); /* Subtle shadow on hover */
+  border-color: #c1cdda; /* Darker blue border on hover */
+}
+
+.custom-card .card-body {
+  padding: 1.5rem; /* Adjust padding for better spacing */
+}
+
