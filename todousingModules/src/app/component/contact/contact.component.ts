@@ -10,5 +10,5 @@ import {  RouterOutlet} from '@angular/router';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
-
+    title: string = "todo-contact";
 }

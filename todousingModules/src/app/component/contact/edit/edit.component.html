@@ -1,1 +1,54 @@
-<p>edit works!</p>
+
+<div>
+    <h5><i class="fa fa-address-book"></i> Update Contact</h5>
+  
+    <!-- Success Alert -->
+    <div *ngIf="alert" class="alert alert-primary mt-0" role="alert">
+      Contact updated successfully!
+    </div>
+  
+    <!-- Update Contact Form -->
+    <form (ngSubmit)="update()" class="mb-3 updateForm">
+      <!-- Name -->
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        class="input-group mb-3"
+        [(ngModel)]="contact.name"
+        name="name"
+        required
+      />
+  
+      <!-- Email -->
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        class="input-group mb-3"
+        [(ngModel)]="contact.email"
+        name="email"
+        required
+      />
+  
+      <!-- Phone Number -->
+      <label for="number">Phone Number:</label>
+      <input
+        type="tel"
+        id="number"
+        class="input-group mb-3"
+        [(ngModel)]="contact.id"
+        name="number"
+        required
+        pattern="[0-9]{10}"
+        title="Enter a valid 10-digit phone number."
+      />
+  
+      <!-- Buttons -->
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button type="button" class="btn btn-secondary" (click)="goBack()">
+        Back
+      </button>
+    </form>
+  </div>
+  
