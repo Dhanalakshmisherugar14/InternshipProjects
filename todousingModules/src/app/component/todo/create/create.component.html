@@ -1,5 +1,5 @@
-<div>
-    <h5><i class="fa fa-sticky-note"></i>Create new note</h5>
+<div class="p-4 flex flex-col" >
+    <h1 class="flex gap-2 "><i class="fa fa-sticky-note"></i>Create new note</h1>
     <div *ngIf="alert" class="alert alert-primary mt-0" role="alert">
       Note created successfully!
     </div>
@@ -8,7 +8,7 @@
       <input
         type="text"
         id="title"
-        class="input-group mb-3"
+        class="input-group mb-3 border-2 "
         [(ngModel)]="newNote.title"
         name="title"
         required
@@ -41,8 +41,11 @@
         name="Color"
         required
       />-->
-      <button type="submit">Create</button>
+      <div class="flex gap-4">
+      <button type="submit" class="border p-2 bg-purp text-white">Create</button>
       <button (click)="goBack()">Back</button>
+      </div>
+
     </form>
 
   </div>

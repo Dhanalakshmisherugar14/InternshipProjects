@@ -44,6 +44,6 @@ export class CreateComponent {
 
   // Navigate back to the main page
   goBack(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/todo']);
   }
 }

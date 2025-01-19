@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { CreateComponent } from "./create/create.component";
-
+import { Component, createComponent } from '@angular/core';
+import {  RouterOutlet} from '@angular/router';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.css']  // Corrected styleUrls
+  styleUrls: ['./todo.component.css']
   ,
-  imports: [CreateComponent]
+  imports: [  CommonModule , RouterOutlet]
 })
 export class TodoComponent {
   title='todo-list';

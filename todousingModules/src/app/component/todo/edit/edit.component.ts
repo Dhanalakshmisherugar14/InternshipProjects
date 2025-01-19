@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
-import { Note } from '../../models/note'; // Update the path accordingly
-import { NoteService } from '../../../services/note.service';
+import { Note } from '../models/note';
+import { NoteService } from '../services/note.service';
 
 
 @Component({
@@ -31,8 +31,7 @@ export class EditComponent {
       } else {
         console.log('SORRY , Some thing is wrong');
       }
-    }); //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
+    });
   }
 
   update(): void {
@@ -44,6 +43,6 @@ export class EditComponent {
     }, 3000);
   }
   goBack() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/todo']);
   }
 }
