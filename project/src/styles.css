@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+.border-dashed{
+    border-style: dashed;
+    
+}
+.gery-color-border {
+    border-color: #d4c7c8;
+}

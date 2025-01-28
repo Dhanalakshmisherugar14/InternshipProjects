@@ -1,0 +1,204 @@
+<div class="container" *ngIf="carrierDetails.length === 0">
+  <div class="col-md-10 mt-3">
+    <button
+      class="col-md-12 btn border-dashed gery-color-border"
+      (click)="addCarrierDetail()"
+    >
+      add career details
+    </button>
+  </div>
+</div>
+
+<div class="row" *ngIf="carrierDetails?.length && carrierDetails.length > 0">
+  <div class="col-md-12">
+    <h3>Carrier Detail</h3>
+    <div class="offset-11 col-1">
+      <button
+        (click)="addCarrierDetail()"
+        class="fa-solid fa-pen-to-square"
+      ></button>
+    </div>
+    <div class="card" *ngFor="let carrier of carrierDetails; let i = index">
+      <div
+        class="card-body"
+        *ngIf="carrier.carrierType === 'Working for a company'"
+      >
+      <div class="row">
+        <div class="offset-10 col-1">
+
+          <button (click)="deleteCarrierDetail(carrier.id.toString())">
+        
+              <i class="fa-solid fa-trash"></i>
+            &nbsp;
+          </button>
+          <button>
+            <i class="fa-solid fa-pen"></i>
+          </button>
+          
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-4">carrer type</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.carrierType }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">comapny Name</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.companyName }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Joining Academic year</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.joiningAcademicYear }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Join Date</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.joiningDate }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">CTC</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier. ctc }}
+          </div>
+        </div>
+        
+      </div>
+      <div class="card-body" *ngIf="carrier.carrierType === 'Self employed'">
+        <div class="row">
+          <div class="offset-10 col-1">
+  
+            <button (click)="deleteCarrierDetail(carrier.id.toString())">
+          
+                <i class="fa-solid fa-trash"></i>
+              &nbsp;
+            </button>
+            <button>
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">carrer type</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.carrierType }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">comapny Name</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.companyName }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Founding Academic Year</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.foundingAcademicYear }}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5">Start Date</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.startDate }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">End Date</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.endDate }}
+          </div>
+        </div>
+      </div>
+
+      <div class="card-body" *ngIf="carrier.carrierType === 'Higher Education'">
+        <div class="row">
+          <div class="offset-10 col-1">
+  
+            <button (click)="deleteCarrierDetail(carrier.id.toString())">
+          
+                <i class="fa-solid fa-trash"></i>
+              &nbsp;
+            </button>
+            <button>
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">Career Type</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.carrierType }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Institute Name</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.institute }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Qualification</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.qualification }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Specialization</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.specialization }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Status</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.status }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Passing Academic Year</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.passingAcademicYear }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Year of Admission</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.yearOfAdmission }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Percentage</div>
+          <div class="col-md-1">:</div>
+          <div class="col-md-6">
+            {{ carrier.overallPercentageOrCgpa }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

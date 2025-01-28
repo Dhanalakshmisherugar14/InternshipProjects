@@ -1,0 +1,316 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-10 -md-2">
+      <button class="btn border" (click)="back()">Back</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10"><h2>Add new carrier details</h2></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label> Carrier type</label>
+          <select
+            class="from-control acadropdown"
+            [(ngModel)]="carrierDetails.carrierType"
+            name="carrierType"
+          >
+            <option
+              *ngFor="let carrierType of carrierType"
+              [value]="carrierType"
+            >
+              {{ carrierType }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="carrierDetails.carrierType === 'Working for a company'">
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Company name</label>
+          <input
+            class="from-control acadropdown"
+            [(ngModel)]="carrierDetails.companyName"
+            name="carrierType" required
+          />
+          
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>joing acadmic year</label>
+          <input
+            class="from-control acadropdown"
+            [(ngModel)]="carrierDetails.joiningAcademicYear"
+            name="joiningAcademicYear" required
+          />
+          
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>joing date</label>
+          <input
+            class="from-control acadropdown"
+            [(ngModel)]="carrierDetails.joiningDate"
+            name="joiningDate" required
+          />
+          
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>CtC</label>
+        <input
+          class="from-control acadropdown"
+          [(ngModel)]="carrierDetails.ctc"
+          name="ctc" required
+        />
+        
+      </div>
+
+    </div>
+     
+    <div class="col-md-12 text-right mt-3">
+      <button class="btn btn-primary" (click)="addCarrierDetail()">Save</button>
+      <button class="btn btn-secondary" (click)="addCarrierDetail()">Edit</button>
+    </div>
+  </div>
+  <div class="row" *ngIf="carrierDetails.carrierType === 'Self employed'">
+    
+      <div class="col-md-12">        
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Company Name</label>
+            <input
+              class="form-control acadropdown"
+              [(ngModel)]="carrierDetails.companyName"
+              name="companyName" required
+            />
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-12">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Founding Academic Year</label>
+            <input
+              class="form-control acadropdown"
+              [(ngModel)]="carrierDetails.foundingAcademicYear"
+              name="foundingAcademicYear" required
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Start Date</label>
+            <input
+              type="date"
+              class="form-control acadropdown"
+              [(ngModel)]="carrierDetails.startDate"
+              name="startDate" required
+            />
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-12">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>End Date</label>
+            <input
+              type="date"
+              class="form-control acadropdown"
+              [(ngModel)]="carrierDetails.endDate"
+              name="endDate" required
+            />
+          </div>
+        </div>
+      </div>
+    
+      <!-- Save and Edit buttons 
+       
+       <div class="col-md-12 text-right mt-3">
+        <button class="btn btn-primary" (click)="addCarrierDetail())">Save</button>
+        <button class="btn btn-secondary" (click)="editSelfEmployedDetails()">Edit</button>
+      </div>
+      
+      
+      
+      
+      -->
+
+
+
+
+       
+      <div class="col-md-12 text-right mt-3">
+        <button class="btn btn-primary" (click)="addCarrierDetail()">Save</button>
+        <button class="btn btn-secondary" (click)="addCarrierDetail()">Edit</button>
+      </div>
+      
+     
+    </div>
+    
+  </div>
+ 
+<!-- For Higher Education -->
+<div class="row" *ngIf="carrierDetails.carrierType ==='Higher Education'">
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Institute Name</label>
+        <input
+          class="form-control acadropdown"
+          [(ngModel)]="carrierDetails.instituteName"
+          name="instituteName"
+          required
+        />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Academic Program</label>
+        <input
+          class="form-control acadropdown"
+          [(ngModel)]="carrierDetails.academicProgram"
+          name="academicProgram"
+          required
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Start Year</label>
+        <input
+          type="number"
+          class="form-control acadropdown"
+          [(ngModel)]="carrierDetails.startYear"
+          name="startYear"
+          required
+        />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>End Year</label>
+        <input
+          type="number"
+          class="form-control acadropdown"
+          [(ngModel)]="carrierDetails.endYear"
+          name="endYear"
+          required
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Qualification</label>
+        <input
+          class="form-control acadropdown"
+          [(ngModel)]="carrierDetails.qualification"
+          name="qualification"
+          required
+        />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Specialization</label>
+        <input
+          class="form-control acadropdown"
+          [(ngModel)]="carrierDetails.specialization"
+          name="specialization"
+          required
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Status</label>
+        <select
+          class="form-control acadropdown"
+          [(ngModel)]="carrierDetails.status"
+          name="status"
+          required
+        >
+          <option value="Completed">Completed</option>
+          <option value="Ongoing">Ongoing</option>
+          <option value="Discontinued">Discontinued</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Passing Academic Year</label>
+        <input
+          type="number"
+          class="form-control acadropdown"
+          [(ngModel)]="carrierDetails.passingYear"
+          name="passingYear"
+          required
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Year of Admission</label>
+        <input
+          type="number"
+          class="form-control acadropdown"
+          [(ngModel)]="carrierDetails.admissionYear"
+          name="admissionYear"
+          required
+        />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Percentage</label>
+        <input
+          type="number"
+          class="form-control acadropdown"
+          [(ngModel)]="carrierDetails.percentage"
+          name="percentage"
+          required
+          step="0.01"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 text-right mt-3">
+    <button class="btn btn-primary" (click)="addCarrierDetail()">Save</button>
+    <button class="btn btn-secondary" (click)="addCarrierDetail()">Edit</button>
+  </div>
+</div>
+
+ 
+  
+  <div class="row">
+    <div class="offset-10">
+      <button class="btn-btn-save" (click)="addCarrierDetail()">save</button>
+    </div>
+  </div>
+
