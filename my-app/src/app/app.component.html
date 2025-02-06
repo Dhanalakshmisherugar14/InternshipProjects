@@ -1,0 +1,35 @@
+<!-- Header -->
+<header class="bg-primary text-white text-center py-3">
+  <h1>Angular Charts Dashboard</h1>
+</header>
+
+
+
+<div class="d-flex">
+
+<nav class="sidebar bg-dark">
+  <h3 class="text-white text-center py-3">Chart App</h3>
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link text-white" routerLink='bar-chart'> Bar Chart</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" routerLink="pie-chart"> Pie Chart</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" routerLink="pie-chart"> Donut Chart</a>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+<div class="container mt-4">
+  <h2 id="bar-chart"></h2>
+  <app-bar-chart></app-bar-chart>
+
+  <h2 id="pie-chart" class="mt-5"></h2>
+  <app-pie-chart></app-pie-chart>
+  <h2 id="donut-chart " class="mt-5"> </h2>
+  <app-donut-chart></app-donut-chart>
+</div>
