@@ -1,0 +1,73 @@
+<div class="container">
+  <h2 class="title">Dashboard</h2>
+
+  <!-- Multiple Progress Bars -->
+  <div class="card">
+    <div class="card-header">Progress Bars</div>
+    <div class="card-body">
+      <div *ngFor="let progress of progressBars" class="mb-3">
+        <label>{{ progress.label }}</label>
+        <div class="progress">
+          <div 
+            class="progress-bar {{ progress.color }}" 
+            role="progressbar" 
+            [style.width.%]="progress.value" 
+            aria-valuemin="0" 
+            aria-valuemax="100">
+            {{ progress.value }}%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Radial Chart -->
+  <div class="card">
+    <div class="card-header">Radial Bar Chart</div>
+    <div class="card-body">
+      <apx-chart 
+        [series]="chartOptions.series" 
+        [chart]="chartOptions.chart" 
+        [plotOptions]="chartOptions.plotOptions" 
+        [labels]="chartOptions.labels">
+      </apx-chart>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="card">
+    <div class="card-header">Recent Users</div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+           
+            <th>Name</th>
+            <th>Role</th>
+            <th>Timestamp</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of tableData">
+            <td>
+                <img [src]="user.avatar"  alt="" class="avatar">
+              </td>
+            <td>{{ user.name  }}</td>
+            <td>{{ user.role }}</td>
+            <td>{{ user.timestamp }}</td>
+            <td>
+              <span class="status-icons">
+                <span class="status-x">❌</span>
+                <span class="status-check">✔</span>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
